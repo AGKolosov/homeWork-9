@@ -34,8 +34,6 @@ public class Main {
         System.out.println("Task 4");
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
         int middle = reverseFullName.length / 2;
-
-        // Меняем местами символы с начала и конца массива
         for (int i = 0; i < middle; i++) {
             char temp = reverseFullName[i];
             reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
