@@ -33,14 +33,22 @@ public class Main {
         System.out.println("Средняя сумма трат за месяц составила " + averageExpenses + " рублей");
         System.out.println("Task 4");
         char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
-        for (int i = reverseFullName.length - 1; i >= 0; i--)
-            System.out.print(reverseFullName[i]);
+        int middle = reverseFullName.length / 2;
+
+        // Меняем местами символы с начала и конца массива
+        for (int i = 0; i < middle; i++) {
+            char temp = reverseFullName[i];
+            reverseFullName[i] = reverseFullName[reverseFullName.length - 1 - i];
+            reverseFullName[reverseFullName.length - 1 - i] = temp;
+        }
+        System.out.println(String.valueOf(reverseFullName));
     }
+
     public static int[] generateRandomArray(int size) {
         Random random = new Random();
         int[] array = new int[size];
         for (int i = 0; i < size; i++) {
-            array[i] = random.nextInt(); // Можно ограничить диапазон случайных чисел, например: random.nextInt(100) для чисел от 0 до 99
+            array[i] = random.nextInt();
         }
         return array;
     }
